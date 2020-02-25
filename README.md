@@ -1,0 +1,2 @@
+# MarkovAuthorComparison
+The MAC project
