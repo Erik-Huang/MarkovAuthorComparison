@@ -3,15 +3,20 @@ import os
 
 AUTHOR_LIST = [
     "Johnston, Mary",
-    "Cholmondeley, Mary",
-    "Grant, Robert",
-    "Allen, James Lane",
     "Bacheller, Irving",
-    "Ford, Paul Leicester",
-    "Goss, Charles Frederic",
+    "Hough, Emerson",
+    "Doyle, Arthur Conan",
+    "Parker, Gilbert"
+    "Rice, Alice Caldwell Hegan"
     "Churchill, Winston",
     "Major, Charles",
+    "Fox, John",
+    "MacGrath, Harold",
+    "Glasgow, Ellen",
+    "Thurston, Katherine Cecil",
+    "McCutcheon, George Barr"
     "Thompson, Maurice"]
+
 ID_TAG = "rdf:ID="
 TITLE_TAG = "dc:title"
 DOWNLOAD_URL = "http://www.gutenberg.org/cache/epub/"
@@ -20,9 +25,9 @@ END_TAG = "END OF"
 
 def main():
     for author in AUTHOR_LIST:
-        #findBookForAuthor(author)
+        findBookForAuthor(author)
         #downloadBooksForAuthor(author)
-        pruneBookInput(author)
+        #pruneBookInput(author)
 
 def findBookForAuthor(author):
     fileInput = open("catalog.rdf", "r")
@@ -79,7 +84,6 @@ def pruneBookInput(author):
             filelist.append(i.path)
     for bookPath in filelist:
         fRead = open(bookPath, "r")
-        print(bookPath)
         temp = fRead.readlines();
         start_index = -1;
         end_index = -1;
@@ -93,7 +97,7 @@ def pruneBookInput(author):
                 break
         fRead.close()
         if (start_index == -1 or end_index == -1):
-            print("Format Not Found in", bookPath)
+            print("No Pruning for", bookPath)
             continue
         else:
             temp = temp[start_index+1:end_index]
