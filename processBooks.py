@@ -1,6 +1,7 @@
 import re
 import os
 
+# Author list can be changed accordingly
 AUTHOR_LIST = [
     "Johnston, Mary",
     "Bacheller, Irving",
@@ -18,15 +19,22 @@ AUTHOR_LIST = [
 ID_TAG = "rdf:ID="
 TITLE_TAG = "dc:title"
 DOWNLOAD_URL = "http://www.gutenberg.org/cache/epub/"
-START_TAG = "START OF"
-END_TAG = "END OF"
+START_TAG_1 = "START OF THE PROJECT"
+START_TAG_2 = "START OF THIS PROJECT"
+END_TAG_1 = "END OF THE PROJECT"
+END_TAG_2 = "END OF THIS PROJECT"
 
+# I do not recommend running all functions in the main altogether
+# Please backup all the files before running the script as
+# the script would over-write local files if exist!
 def main():
-    for author in AUTHOR_LIST[5:]:
+    for author in AUTHOR_LIST:
+        print("Handling", author)
         #findBookForAuthor(author)
-        downloadBooksForAuthor(author)
+        #downloadBooksForAuthor(author)
         #pruneBookInput(author)
 
+# Fetch all the available books for the author
 def findBookForAuthor(author):
     fileInput = open("catalog.rdf", "r")
     lines = fileInput.readlines()
@@ -48,19 +56,21 @@ def findBookForAuthor(author):
             if id != -1 and name != "":
                 bookDict[id] = name
             else:
-                print("not found at index", i)
+                print("no book found at index", i)
     for id in bookDict:
         print("%6s   %s" % (id, bookDict[id]))
     print(len(bookDict), "books found for ", author)
     fileInput.close()
     outputBookListForAuthor(author, bookDict)
 
+# Output the fectch book list to a local txt file
 def outputBookListForAuthor(author, bookDict):
     fileOutput = open("./bookList/"+author+".txt", "w+")
     for id in bookDict:
         fileOutput.write("%s|%s\n" % (id, bookDict[id]))
     fileOutput.close()
 
+# Download all books for a certain author
 def downloadBooksForAuthor(author):
     fileInput = open("./bookList/"+author+".txt", "r")
     author = author.replace(" ", "\ ").split(",\ ")
@@ -73,6 +83,7 @@ def downloadBooksForAuthor(author):
         cmd = "wget -O %s %s%s/pg%s.txt" % (location + bookname, DOWNLOAD_URL, id, id)
         os.system(cmd)
 
+# Truncate the book input for a certain author
 def pruneBookInput(author):
     filelist = []
     author = author.split(", ")
@@ -86,19 +97,19 @@ def pruneBookInput(author):
         start_index = -1;
         end_index = -1;
         for i in range(len(temp)):
-            if START_TAG in temp[i]:
+            if START_TAG_1 in temp[i] or START_TAG_2 in temp[i]:
                 start_index = i
                 break
         for i in range(len(temp)):
-            if END_TAG in temp[len(temp)-i-1]:
-                end_index = i
+            index = len(temp)-i-1
+            if END_TAG_1 in temp[index] or END_TAG_2 in temp[index]:
+                end_index = index
                 break
         fRead.close()
         if (start_index == -1 or end_index == -1):
             print("No Pruning for", bookPath)
-            continue
         else:
-            temp = temp[start_index+1:end_index]
+            temp = temp[start_index+1:end_index-2]
             fWrite= open(bookPath, "w+")
             for line in temp:
                 fWrite.write(line)
