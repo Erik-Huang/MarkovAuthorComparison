@@ -22,7 +22,7 @@ START_TAG = "START OF"
 END_TAG = "END OF"
 
 def main():
-    for author in AUTHOR_LIST:
+    for author in AUTHOR_LIST[5:]:
         #findBookForAuthor(author)
         downloadBooksForAuthor(author)
         #pruneBookInput(author)
