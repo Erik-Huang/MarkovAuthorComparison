@@ -6,16 +6,14 @@ AUTHOR_LIST = [
     "Bacheller, Irving",
     "Hough, Emerson",
     "Doyle, Arthur Conan",
-    "Parker, Gilbert"
-    "Rice, Alice Caldwell Hegan"
+    "Parker, Gilbert",
+    "Rice, Alice Caldwell Hegan",
     "Churchill, Winston",
-    "Major, Charles",
     "Fox, John",
     "MacGrath, Harold",
     "Glasgow, Ellen",
-    "Thurston, Katherine Cecil",
     "McCutcheon, George Barr"
-    "Thompson, Maurice"]
+    ]
 
 ID_TAG = "rdf:ID="
 TITLE_TAG = "dc:title"
@@ -25,8 +23,8 @@ END_TAG = "END OF"
 
 def main():
     for author in AUTHOR_LIST:
-        findBookForAuthor(author)
-        #downloadBooksForAuthor(author)
+        #findBookForAuthor(author)
+        downloadBooksForAuthor(author)
         #pruneBookInput(author)
 
 def findBookForAuthor(author):
