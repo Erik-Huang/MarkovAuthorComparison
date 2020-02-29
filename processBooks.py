@@ -18,14 +18,17 @@ AUTHOR_LIST = [
 ID_TAG = "rdf:ID="
 TITLE_TAG = "dc:title"
 DOWNLOAD_URL = "http://www.gutenberg.org/cache/epub/"
-START_TAG = "START OF"
-END_TAG = "END OF"
+START_TAG_1 = "START OF THE PROJECT"
+START_TAG_2 = "START OF THIS PROJECT"
+END_TAG_1 = "END OF THE PROJECT"
+END_TAG_2 = "END OF THIS PROJECT"
+
 
 def main():
     for author in AUTHOR_LIST[5:]:
         #findBookForAuthor(author)
-        downloadBooksForAuthor(author)
-        #pruneBookInput(author)
+        #downloadBooksForAuthor(author)
+        pruneBookInput(author)
 
 def findBookForAuthor(author):
     fileInput = open("catalog.rdf", "r")
@@ -86,11 +89,17 @@ def pruneBookInput(author):
         start_index = -1;
         end_index = -1;
         for i in range(len(temp)):
-            if START_TAG in temp[i]:
+            if START_TAG_1 in temp[i]:
+                start_index = i
+                break
+            elif START_TAG_2 in temp[i]:
                 start_index = i
                 break
         for i in range(len(temp)):
-            if END_TAG in temp[len(temp)-i-1]:
+            if END_TAG_1 in temp[len(temp)-i-1]:
+                end_index = i
+                break
+            elif END_TAG_2 in temp[len(temp)-i-1]:
                 end_index = i
                 break
         fRead.close()
