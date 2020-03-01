@@ -3,30 +3,35 @@ import os
 
 AUTHOR_LIST = [
     "Johnston, Mary",
-    "Cholmondeley, Mary",
-    "Grant, Robert",
-    "Allen, James Lane",
     "Bacheller, Irving",
-    "Ford, Paul Leicester",
-    "Goss, Charles Frederic",
+    "Hough, Emerson",
+    "Doyle, Arthur Conan",
+    "Parker, Gilbert",
+    "Rice, Alice Caldwell Hegan",
     "Churchill, Winston",
-    "Major, Charles",
-    "Thompson, Maurice"]
+    "Fox, John",
+    "MacGrath, Harold",
+    "Glasgow, Ellen",
+    "McCutcheon, George Barr"
+    ]
 
 ROWS, COLS = (28, 28)
 
 def main():
+    resultList = open("./matricesPathList", "w+")
     for author in AUTHOR_LIST:
+        print("Started on", author)
         fileList = getAllBooksForAuthor(author)
         for filePath in fileList:
             book = open(filePath, "r")
             text = book.read().lower()
             book.close()
-            T = getTransMatrix(text)
-            createCSV(filePath, T)
+            T = getTransMatrix(text, filePath)
+            createCSV(filePath, T, resultList)
+    resultList.close()
 
 
-def getTransMatrix(text):
+def getTransMatrix(text, filePath):
     T = [[0 for r in range(COLS)] for c in range(ROWS)]
     for i in range(1, len(text)):
     	next = getIndex(text[i])
@@ -38,7 +43,7 @@ def getTransMatrix(text):
         	for col in range(len(T[row])):
         		T[row][col] = T[row][col] / rowSum
         else:
-            print("warning: zero sum row")
+            print("warning: zero sum row in", filePath)
     #print(T)
     return T
 
@@ -62,16 +67,19 @@ def reverseName(author):
     author = author.split(", ")
     return author[1]+" "+author[0]
 
-def createCSV(filePath, T):
+def createCSV(filePath, T, resultList):
     filePath = filePath.split("/")
-    outputPath = "./%s/%s" % (filePath[1], filePath[1].replace(" ", ""))
+    mtxDirPath = filePath[1] + " Matrices"
+    os.system("mkdir " + mtxDirPath.replace(" ", "\ "))
+    outputPath = "./%s/%s" % (mtxDirPath, filePath[1].replace(" ", ""))
     bookName = filePath[2].split(" ")
     for word in bookName:
         outputPath += word[0].upper()
     outputPath += ".csv"
-    print("saving to...", outputPath)
+    print("saving matrix result of", filePath[2])
     df = pd.DataFrame(data=T, columns=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', "space", "symbol"])
     df.to_csv(outputPath, index=False, encoding='utf8')
+    resultList.write(outputPath + "\n")
 
 if __name__ == '__main__':
     main()
