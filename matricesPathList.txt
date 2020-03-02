@@ -4,6 +4,7 @@
 ./Mary Johnston Matrices/MaryJohnstonSMAN.csv
 ./Mary Johnston Matrices/MaryJohnstonB.csv
 ./Mary Johnston Matrices/MaryJohnstonLR.csv
+./Mary Johnston Matrices/MaryJohnstonComposite.csv
 ./Irving Bacheller Matrices/IrvingBachellerTC—V0.csv
 ./Irving Bacheller Matrices/IrvingBachellerAMFTAASOTBOD.csv
 ./Irving Bacheller Matrices/IrvingBachellerJSK.csv
@@ -11,6 +12,7 @@
 ./Irving Bacheller Matrices/IrvingBachellerΜ.csv
 ./Irving Bacheller Matrices/IrvingBachellerTLITCATOTNCITTOSW.csv
 ./Irving Bacheller Matrices/IrvingBachellerVATOTCOC.csv
+./Irving Bacheller Matrices/IrvingBachellerComposite.csv
 ./Emerson Hough Matrices/EmersonHoughTGATHH.csv
 ./Emerson Hough Matrices/EmersonHoughAR.csv
 ./Emerson Hough Matrices/EmersonHoughTLATP.csv
@@ -19,6 +21,7 @@
 ./Emerson Hough Matrices/EmersonHoughH.csv
 ./Emerson Hough Matrices/EmersonHoughTYA.csv
 ./Emerson Hough Matrices/EmersonHoughTSMS.csv
+./Emerson Hough Matrices/EmersonHoughComposite.csv
 ./Arthur Conan Doyle Matrices/ArthurConanDoyleAG.csv
 ./Arthur Conan Doyle Matrices/ArthurConanDoyleTRA.csv
 ./Arthur Conan Doyle Matrices/ArthurConanDoyleTPB.csv
@@ -27,6 +30,7 @@
 ./Arthur Conan Doyle Matrices/ArthurConanDoyleTVOF.csv
 ./Arthur Conan Doyle Matrices/ArthurConanDoyleRH..csv
 ./Arthur Conan Doyle Matrices/ArthurConanDoyleTTOTK.csv
+./Arthur Conan Doyle Matrices/ArthurConanDoyleComposite.csv
 ./Gilbert Parker Matrices/GilbertParkerWY.csv
 ./Gilbert Parker Matrices/GilbertParkerIPOP.csv
 ./Gilbert Parker Matrices/GilbertParkerWVCTP.csv
@@ -35,6 +39,7 @@
 ./Gilbert Parker Matrices/GilbertParkerTROW—V0.csv
 ./Gilbert Parker Matrices/GilbertParkerNL.csv
 ./Gilbert Parker Matrices/GilbertParkerAROTS.csv
+./Gilbert Parker Matrices/GilbertParkerComposite.csv
 ./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceGBT.csv
 ./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceCA.csv
 ./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceMO.csv
@@ -43,6 +48,7 @@
 ./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceCJ.csv
 ./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceLM.csv
 ./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceTJG.csv
+./Alice Caldwell Hegan Rice Matrices/AliceCaldwellHeganRiceComposite.csv
 ./Winston Churchill Matrices/WinstonChurchillOS.csv
 ./Winston Churchill Matrices/WinstonChurchillTSH.csv
 ./Winston Churchill Matrices/WinstonChurchillAFC—V3.csv
@@ -51,6 +57,7 @@
 ./Winston Churchill Matrices/WinstonChurchillMAJ.csv
 ./Winston Churchill Matrices/WinstonChurchillRC—V0.csv
 ./Winston Churchill Matrices/WinstonChurchillLR.csv
+./Winston Churchill Matrices/WinstonChurchillComposite.csv
 ./John Fox Matrices/JohnFoxTLS.csv
 ./John Fox Matrices/JohnFoxCEOLAOS.csv
 ./John Fox Matrices/JohnFoxTHOTH.csv
@@ -58,6 +65,7 @@
 ./John Fox Matrices/JohnFoxHFSAOS.csv
 ./John Fox Matrices/JohnFoxSPP.csv
 ./John Fox Matrices/JohnFoxTBT.csv
+./John Fox Matrices/JohnFoxComposite.csv
 ./Harold MacGrath Matrices/HaroldMacGrathHAM.csv
 ./Harold MacGrath Matrices/HaroldMacGrathTPOH.csv
 ./Harold MacGrath Matrices/HaroldMacGrathTGC.csv
@@ -66,6 +74,7 @@
 ./Harold MacGrath Matrices/HaroldMacGrathTC.csv
 ./Harold MacGrath Matrices/HaroldMacGrathTMOTB.csv
 ./Harold MacGrath Matrices/HaroldMacGrathHAR.csv
+./Harold MacGrath Matrices/HaroldMacGrathComposite.csv
 ./Ellen Glasgow Matrices/EllenGlasgowV.csv
 ./Ellen Glasgow Matrices/EllenGlasgowTROAPM.csv
 ./Ellen Glasgow Matrices/EllenGlasgowTB.csv
@@ -74,6 +83,7 @@
 ./Ellen Glasgow Matrices/EllenGlasgowTDAROTVTF.csv
 ./Ellen Glasgow Matrices/EllenGlasgowTMOOC.csv
 ./Ellen Glasgow Matrices/EllenGlasgowTAL.csv
+./Ellen Glasgow Matrices/EllenGlasgowComposite.csv
 ./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonGF.csv
 ./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonTA.csv
 ./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonTPP.csv
@@ -82,3 +92,4 @@
 ./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonTDOTD.csv
 ./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonTIS.csv
 ./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonACD.csv
+./George Barr McCutcheon Matrices/GeorgeBarrMcCutcheonComposite.csv
