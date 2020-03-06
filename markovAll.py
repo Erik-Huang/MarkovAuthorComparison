@@ -8,12 +8,12 @@ AUTHOR_LIST = [
     "Doyle, Arthur Conan",
     "Parker, Gilbert",
     "Rice, Alice Caldwell Hegan",
-    "Churchill, Winston",
     "Fox, John",
     "MacGrath, Harold",
     "Glasgow, Ellen",
     "McCutcheon, George Barr"
     ]
+
 
 ROWS, COLS = (28, 28)
 

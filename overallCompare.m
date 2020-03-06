@@ -32,10 +32,14 @@ for jj = 1:numel(allFiles)
     end
 end
 
+names = ["Alice Caldwell Hegan Rice";"Arthur Conan Doyle";"Ellen Glasgow";"Emerson Hough";"George Barr McCutcheon";"Gilbert Parker";"Harold MacGrath";"Irving Bacheller";"John Fox";"Mary Johnston"];
+shortNames = ["Rice";"Doyle";"Glasgow";"Hough";"McCutcheon";"Parker";"MacGrath";"Bacheller";"Fox";"Johnston"];
+
 %% Pairwise distance definition
 
 % Change this to whatever you want
-dist = @(A, B) norm(A - B, 'fro');
+dist = @(A, B) norm(A - B, 1);
+%dist = @(A, B) abs(norm(A, 2) - norm(B, 2));
 
 %% Comparing individual books with each other. 
 
@@ -49,7 +53,20 @@ end
 
 % Better visualization is on the to-do list
 figure(1)
-pcolor(dist_ind); colorbar
+imagesc(dist_ind); colorbar; hold on;
+ax = gca; caxis([0 1.5])
+set(gca,'xaxisLocation','top')
+set(ax,'XTick', (1:4:size(dist_ind,2)))
+set(ax,'YTick', (1:4:size(dist_ind,1)))
+title("A^2-B^4")
+% row grids
+for i = 1:size(dist_ind, 1)
+    plot([.5,size(dist_ind, 2)+.5],[i-.5,i-.5],'k-');
+end
+% column grids
+for j = 1:size(dist_ind, 2)
+    plot([j-.5,j-.5],[.5,size(dist_ind, 2)+.5],'k-');
+end
 
 %% Comparing authors' transitional matrices with each other
 
@@ -62,7 +79,22 @@ end
 
 % Better visualization is on the to-do list
 figure(2)
-pcolor(dist_comp); colorbar
+imagesc(dist_comp); colorbar; hold on;
+ax = gca;
+set(gca,'xaxisLocation','top')
+set(ax,'XTick', (1:size(dist_comp,2)))
+set(ax,'YTick', (1:size(dist_comp,1)))
+set(ax,'XTickLabel', shortNames')
+set(ax,'YTickLabel', names')
+title("Comparison between all authors")
+% row grids
+for i = 1:size(dist_comp, 1)
+    plot([.5,size(dist_comp, 2)+.5],[i-.5,i-.5],'k-');
+end
+% column grids
+for j = 1:size(dist_comp, 2)
+    plot([j-.5,j-.5],[.5,size(dist_comp, 2)+.5],'k-');
+end
 
 %% Comparing authors' transitional matrices with their books
 
@@ -75,4 +107,21 @@ end
 
 % Better visualization is on the to-do list
 figure(3)
-pcolor(dist_both); colorbar
+imagesc(dist_both); colorbar; hold on;
+ax = gca;
+set(gca,'xaxisLocation','top')
+set(ax,'XTick', (1:4:size(dist_both,2)))
+set(ax,'YTick', (1:size(dist_both,1)))
+set(ax,'YTickLabel', names')
+title("Comparison between all authors and all books")
+% row grids
+for i = 1:size(dist_both, 1)
+    plot([.5,size(dist_both, 2)+.5],[i-.5,i-.5],'k-');
+end
+% column grids
+for j = 1:size(dist_both, 2)
+    plot([j-.5,j-.5],[.5,size(dist_both, 2)+.5],'k-');
+end
+
+
+

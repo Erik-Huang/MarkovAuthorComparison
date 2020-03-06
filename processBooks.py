@@ -9,7 +9,6 @@ AUTHOR_LIST = [
     "Doyle, Arthur Conan",
     "Parker, Gilbert",
     "Rice, Alice Caldwell Hegan",
-    "Churchill, Winston",
     "Fox, John",
     "MacGrath, Harold",
     "Glasgow, Ellen",
@@ -46,7 +45,7 @@ def findBookForAuthor(author):
             nextIndex = i - 1
             id = -1
             name = ""
-            for k in range(15):
+            for k in range(6):
                 nextLine = lines[nextIndex]
                 if ID_TAG in nextLine:
                     id = nextLine[28:-3]
